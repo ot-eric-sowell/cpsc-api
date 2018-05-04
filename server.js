@@ -53,7 +53,7 @@ app.get('/api', (req, res) => {
   let output = violations.slice();
 
   if (req.query.product) {
-    output = output.filter((x) => x.product.toLowerCase().indexOf(req.query.product) > -1);
+    output = output.filter((x) => x.product.toLowerCase().indexOf(req.query.product.toLowerCase()) > -1);
   }
 
   const total = output.length;
