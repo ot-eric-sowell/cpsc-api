@@ -119,7 +119,7 @@ app.get('/api/violation/:id', (req, res) => {
   }
 
   res.send({
-    count: set.infractions.length,
+    total: set.infractions.length,
     id: set.id,
     violation: set.violation,
     infractions: set.infractions
@@ -132,11 +132,11 @@ app.get('/api/violations', (req, res) => {
     list.push({
       violation: key,
       id: infractionsByViolation[key].id,
-      count: infractionsByViolation[key].infractions.length
+      total: infractionsByViolation[key].infractions.length
     })
   }
   res.send({
-    count: list.length,
+    total: list.length,
     violations: list
   });
 });
